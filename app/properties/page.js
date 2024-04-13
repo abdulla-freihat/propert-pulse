@@ -42,7 +42,6 @@ const PropertyPage = async () => {
 
   const data = await fetchProperties(page, pageSize);
 
-  data.properties.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
   const handlePageChange = (newPage) => {
     setPage(newPage);

@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import Hero from "@/components/Hero";
+import InfoBoxes from "@/components/InfoBoxes";
+import HomeProperties from "@/components/HomeProperties";
 
-const Homepage = () => {
+const HomePage = async () => {
   return (
-    <div className='text-red-600'>Homespage</div>
-  )
-}
+    <>
+      <Hero />
+      <InfoBoxes />
+      <HomeProperties />
+    </>
+  );
+};
 
-export default Homepage
+export default HomePage;

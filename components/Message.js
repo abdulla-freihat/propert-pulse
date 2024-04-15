@@ -37,7 +37,7 @@ const Message = ({ message, handleDeleteClick }) => {
     <div>
       <div
         key={message._id}
-        className="relative bg-white p-4 rounded-md shadow-md border border-gray-200"
+        className="relative bg-white dark:bg-gray-800 p-4 rounded-md shadow-md border border-gray-200"
       >
         {!isRead && (
           <div className="absolute top-2 right-2  bg-yellow-500  text-white px-2  py-1  rounded-md ">

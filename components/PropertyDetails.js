@@ -11,7 +11,7 @@ import { FaLocationDot } from "react-icons/fa6";
 const PropertyDetails = ({ property }) => {
   return (
     <main>
-      <div className="bg-white p-6 rounded-lg shadow-md text-center md:text-left">
+      <div className="bg-white dark:bg-gray-800 border p-6 rounded-lg shadow-md text-center md:text-left">
         <div className="text-gray-500 mb-4">{property.type}</div>
         <h1 className="text-3xl font-bold mb-4">{property.name}</h1>
         <div className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start">
@@ -64,7 +64,7 @@ const PropertyDetails = ({ property }) => {
         </div>
       </div>
 
-      <div className="bg-white p-6 rounded-lg shadow-md mt-6">
+      <div className="bg-white dark:bg-gray-800 border p-6 rounded-lg shadow-md mt-6">
         <h3 className="text-lg font-bold mb-6">Description & Details</h3>
         <div className="flex justify-center gap-4 text-blue-500 mb-4 text-xl space-x-9">
           <p className="flex gap-2 items-center">
@@ -86,7 +86,7 @@ const PropertyDetails = ({ property }) => {
 
        {property.amenities.length !==0 && 
        
-        <div className="bg-white p-6 rounded-lg shadow-md mt-6">
+        <div className="bg-white  dark:bg-gray-800 border p-6 rounded-lg shadow-md mt-6">
         <h3 className="text-lg font-bold mb-6">Amenities</h3>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none space-y-2">

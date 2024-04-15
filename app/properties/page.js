@@ -41,6 +41,7 @@ const PropertyPage = async () => {
   }, [page, pageSize]);
 
   const data = await fetchProperties(page, pageSize);
+  
 
 
   const handlePageChange = (newPage) => {

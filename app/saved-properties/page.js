@@ -40,7 +40,7 @@ const SavedProperties = () => {
     <Spinner loading={loading} />
   ) : (
     <section className="px-4 py-6 h-screen">
-      <h1 class="text-3xl font-bold mb-6">Your Saved Properties</h1>
+      <h1 className="text-3xl font-bold mb-6">Your Saved Properties</h1>
 
       <div className="container-xl lg:container m-auto px-4 py-6">
         {properties.length === 0 ? (

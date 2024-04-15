@@ -2,7 +2,7 @@ import React from 'react'
 import PropertySearchForm from './PropertySearchForm'
 const Hero = () => {
   return (
-    <section className="bg-blue-700 py-20 mb-4">
+    <section className="bg-blue-700 py-20 mb-4 dark:bg-gray-800">
       <div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center"
       >

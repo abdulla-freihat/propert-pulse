@@ -71,7 +71,7 @@ const PropertyContactForm = ({property}) => {
 
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
+    <div className="bg-white   dark:bg-gray-800 border p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-6">Contact Property Manager</h3>
 
                {wasSubmited ?(

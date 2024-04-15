@@ -175,7 +175,7 @@ const AddPropertyPageForm = () => {
         ></textarea>
       </div>
 
-      <div className="mb-4 bg-blue-50 p-4">
+      <div className="mb-4 bg-blue-50 dark:bg-gray-800 p-4">
         <label className="block text-gray-700 font-bold mb-2">Location</label>
         <input
           type="text"
@@ -455,7 +455,7 @@ const AddPropertyPageForm = () => {
         </div>
       </div>
 
-      <div className="mb-4 bg-blue-50 p-4">
+      <div className="mb-4 bg-blue-50 dark:bg-gray-800 p-4">
         <label className="block text-gray-700 font-bold mb-2">
           Rates (Leave blank if not applicable)
         </label>

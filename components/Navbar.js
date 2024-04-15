@@ -10,14 +10,14 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import { useGlobalContext } from "@/context/GlobalContext";
-
+import DarkModeSwitch from "./DarkModeSwitch";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const [providers, setProviders] = useState(null);
   const pathname = usePathname();
 
-  const {unreadCount , setUnreadCount} = useGlobalContext();
+  const { unreadCount, setUnreadCount } = useGlobalContext();
 
   const { data: session } = useSession();
   const profileImage = session?.user?.image;
@@ -39,22 +39,15 @@ const Navbar = () => {
 
     const fetchUnreadMessages = async () => {
       try {
+        const res = await fetch("/api/messages/unread-count");
 
-          const res = await fetch('/api/messages/unread-count')
+        if (res.status === 200) {
+          const data = await res.json();
 
-
-          if(res.status===200){
-
-             const data= await res.json();
-              
-              setUnreadCount(data)
-          }
-
-
+          setUnreadCount(data);
+        }
       } catch (err) {
-
-        console.log(err.message)
-
+        console.log(err.message);
       }
     };
 
@@ -62,7 +55,7 @@ const Navbar = () => {
   }, [session]);
 
   return (
-    <nav className="bg-blue-700 border-b border-blue-500">
+    <nav className="bg-blue-700 border-b border-blue-500 dark:bg-gray-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
@@ -162,6 +155,10 @@ const Navbar = () => {
 
           {session && (
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
+
+            <DarkModeSwitch />
+
+
               <Link href="/messages" className="relative group">
                 <button
                   type="button"
@@ -186,12 +183,10 @@ const Navbar = () => {
                 </button>
 
                 {unreadCount > 0 && (
-
                   <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">
-                  {unreadCount}
-                </span>
+                    {unreadCount}
+                  </span>
                 )}
-                
               </Link>
               {/* Profile dropdown button */}
               <div className="relative ml-3">
@@ -265,7 +260,11 @@ const Navbar = () => {
               </div>
             </div>
           )}
+
+     
+
         </div>
+
       </div>
 
       {/* Mobile menu, show/hide based on menu state. */}

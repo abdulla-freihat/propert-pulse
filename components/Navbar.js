@@ -153,10 +153,12 @@ const Navbar = () => {
 
           {/* Right Side Menu (Logged In) */}
 
+          <div className="ml-5"> <DarkModeSwitch /></div>
+
           {session && (
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
 
-            <DarkModeSwitch />
+           
 
 
               <Link href="/messages" className="relative group">
